@@ -109,7 +109,7 @@ public class Main {
                 }
                 case 6 -> {
                     estado = false;
-                    System.out.println("¡Gracias por usar el sistema!");
+                    System.out.println("HASTA PRONTO");
                 }
                 default -> {
                     System.out.println("OPCION INVALIDA");
