@@ -31,11 +31,11 @@ public class Celular extends Producto implements Vendible{
                 ", camaraResolucion=" + camaraResolucion +
                 '}';
     }
-
+    /*
     Celular celular1 = new Celular("REDMI10", "XIAOMI", 800000, 30, 4000, 50);
     Celular celular2 = new Celular("RENO10", "OPPO", 1200000, 15, 4500, 48);
     Celular celular3 = new Celular("A31", "SAMSUNG", 950000, 12, 3850, 45);
-
+    */
 
     @Override
     public void mostrarDetalle() {
@@ -49,7 +49,6 @@ public class Celular extends Producto implements Vendible{
 
     @Override
     public double calcularPrecioVenta(int cantidad) {
-        cantidad = 0;
         if (cantidad>5){
             precio = precio*0.9;
         }

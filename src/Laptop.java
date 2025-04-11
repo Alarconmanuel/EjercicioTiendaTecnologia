@@ -35,10 +35,11 @@ public class Laptop extends Producto implements Vendible {
                 '}';
     }
 
+    /*
     Laptop laptop1 = new Laptop("IDEAPAD", "LENOVO",2150000, 10, "INTEL CORE i3", 16 );
     Laptop laptop2 = new Laptop("VIVOBOOK", "ASUS",1950000, 15, "AMD RYZEN 5", 32 );
     Laptop laptop3 = new Laptop("INSPIRION", "DELL",2550000, 20, "INTEL CORE i7", 16 );
-
+*/
     @Override
     public void mostrarDetalle() {
         System.out.println("NOMBRE COMPUTADOR: "+nombre);
@@ -51,7 +52,6 @@ public class Laptop extends Producto implements Vendible {
 
     @Override
     public double calcularPrecioVenta(int cantidad) {
-        cantidad = 0;
         if (cantidad>5){
             precio = precio*0.9;
         }

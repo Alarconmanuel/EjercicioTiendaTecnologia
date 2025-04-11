@@ -49,11 +49,27 @@ public class Cliente {
     }
 
     public void comprarProducto(Producto producto, int cantidad){
+        if (producto.getCantidadStoke() >= cantidad) {
+            producto.setCantidadStoke(producto.getCantidadStoke() - cantidad);
+            this.Producto.add(producto);
+            System.out.println("Compra realizada con éxito.");
+        } else {
+            System.out.println("No hay suficiente stock.");
+        }
     }
 
     public void mostrarCompra(){
-        System.out.println("NOMBRE CLIENTE: "+nombre);
-        System.out.println("CORREO CLIENTE: "+correo);
-        System.out.println("PRODUCTOS COMPRADOS: "+Producto);
+        System.out.println("NOMBRE CLIENTE: " + nombre);
+        System.out.println("CORREO CLIENTE: " + correo);
+        System.out.println("PRODUCTOS COMPRADOS:");
+        double totalCompra = 0;
+        for (Producto p : Producto) {
+            p.mostrarDetalle();
+            int cantidad = p.getCantidadStoke(); // Aquí se guarda como "stock", pero representa lo comprado
+            double total = ((Vendible) p).calcularPrecioVenta(cantidad);
+            System.out.println("Cantidad comprada: " + cantidad + ", Total: $" + total);
+            totalCompra += total;
+        }
+        System.out.println("TOTAL COMPRA: $" + totalCompra);
     }
 }
